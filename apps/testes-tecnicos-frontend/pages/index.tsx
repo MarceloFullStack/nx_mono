@@ -1,3 +1,4 @@
+import { AppsTeste } from '@mono/apps/teste';
 import styled from 'styled-components';
 
 const StyledPage = styled.div`
@@ -18,6 +19,7 @@ export function Index() {
           <div id="welcome">
             <h1>
               <span> Hello there, </span>
+              <AppsTeste/>
               Welcome testes-tecnicos-frontend 👋
             </h1>
           </div>

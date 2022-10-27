@@ -1,18 +1,14 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
-import './styles.css';
-
-function CustomApp({ Component, pageProps }: AppProps) {
+import { Provider } from 'react-redux';
+import type { AppProps } from 'next/app';
+import { store } from '../redux/store/store'
+function MyApp({
+  Component, pageProps,
+}: AppProps) {
   return (
-    <>
-      <Head>
-        <title>Welcome to testes-tecnicos-frontend!</title>
-      </Head>
-      <main className="app">
-        <Component {...pageProps} />
-      </main>
-    </>
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
   );
 }
 
-export default CustomApp;
+export default MyApp;
