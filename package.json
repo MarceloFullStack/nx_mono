@@ -9,6 +9,12 @@
   },
   "private": true,
   "dependencies": {
+    "@emotion/cache": "^11.10.5",
+    "@emotion/react": "^11.10.5",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.11",
     "@nrwl/next": "15.0.3",
     "@reduxjs/toolkit": "^1.8.6",
     "core-js": "^3.6.5",
