@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mono/apps/teste": ["libs/apps/teste/src/index.ts"]
+      "@mono/soteste": ["libs/soteste/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,16 +1,10 @@
-import { useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
-import {
-  decrement,
-  increment,
-  incrementByAmount,
-  selectCount,
-} from '../../redux/slices/testesSlices';
+import React, {useState} from 'react';
+import {useCount} from "../../redux/store/useCount";
 
 const IndexPage: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const count = useAppSelector(selectCount);
   const [incrementAmount, setIncrementAmount] = useState<number>(0);
+
+  const {count, countIncrement, countDecrement, countIncrementByAmount} = useCount();
 
   return (
     <div
@@ -23,7 +17,7 @@ const IndexPage: React.FC = () => {
         height: '100vh',
       }}
     >
-      <h1>Contador monorepo</h1>
+      <h1>Contador monorepo {count}</h1>
       <h2>Numero atual :{count}</h2>
       <div>
         <input
@@ -32,14 +26,14 @@ const IndexPage: React.FC = () => {
           type="number"
         />
         <button
-          onClick={() => dispatch(incrementByAmount(Number(incrementAmount)))}
+          onClick={() => countIncrementByAmount(Number(incrementAmount))}
         >
           valor
         </button>
       </div>
       <div>
-        <button onClick={() => dispatch(decrement())}>incrementar 1</button>
-        <button onClick={() => dispatch(increment())}>decrementar 1</button>
+        <button onClick={() => countIncrement()}>incrementar 1</button>
+        <button onClick={() => countDecrement()}>decrementar 1</button>
       </div>
     </div>
   );

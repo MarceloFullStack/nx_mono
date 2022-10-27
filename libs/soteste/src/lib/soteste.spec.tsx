@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import AppsTeste from './apps-teste';
+import Soteste from './soteste';
 
-describe('AppsTeste', () => {
+describe('Soteste', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<AppsTeste />);
+    const { baseElement } = render(<Soteste />);
     expect(baseElement).toBeTruthy();
   });
 });
