@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mono/react-ui/shared": ["libs/react-ui/shared/src/index.ts"],
       "@mono/soteste": ["libs/soteste/src/index.ts"]
     }
   },
