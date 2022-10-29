@@ -22,6 +22,7 @@
     "serve": {
       "executor": "@nrwl/next:server",
       "defaultConfiguration": "development",
+      "postcssConfig": "apps/testes-tecnicos-frontend/postcss.config.js",
       "options": {
         "buildTarget": "testes-tecnicos-frontend:build",
         "dev": true

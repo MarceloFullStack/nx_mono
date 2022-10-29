@@ -56,7 +56,7 @@ export default function App() {
               p={1}
         >
           <Grid item xs={12} sm={12} lg={12} textAlign={'center'}>
-            <h1>primeiro nivel DotSe</h1>
+            <h1 className={'bg-pink-400'}>primeiro nivel DotSe</h1>
           </Grid>
           <Grid item xs={11} sm={11} lg={11}>
             <FormInputText

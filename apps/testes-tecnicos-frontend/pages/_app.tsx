@@ -8,7 +8,8 @@ import theme from '../config/theme';
 import createEmotionCache from '../config/createEmotionCache';
 import {store} from '../redux/store/store'
 import {Provider} from "react-redux";
-
+import "./styles.css";
+import 'tailwindcss/tailwind.css'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
