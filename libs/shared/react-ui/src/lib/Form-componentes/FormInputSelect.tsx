@@ -48,7 +48,7 @@ export const FormInputSelect = ({
           onChange={(event: any, item: any) => {
             onChange(item);
           }}
-          value={value}
+          value={value ? value : defaultValue}
           placeholder="Selecionar"
           freeSolo={freeSolo ?? false}
           // onInputChange={(v) => {

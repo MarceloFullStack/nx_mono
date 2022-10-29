@@ -1,4 +1,4 @@
-import { BaseTextFieldProps } from "@material-ui/core";
+import { BaseTextFieldProps } from "@mui/material";
 import { FieldErrors } from "react-hook-form";
 
 export interface FormInputProps extends BaseTextFieldProps {
@@ -13,7 +13,7 @@ export interface FormInputProps extends BaseTextFieldProps {
   multiline?: boolean; //usado para textarea
   defaultValue?: any;
   disabled?: boolean;
-  errros?: FieldErrors;
+  erros?: FieldErrors;
   numberFormat?: boolean;
   prefix?: string;
 }
