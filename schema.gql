@@ -1,0 +1,276 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input BooleanFieldComparison {
+  is: Boolean
+  isNot: Boolean
+}
+
+"""Cursor for paging through collections"""
+scalar ConnectionCursor
+
+input CreateManyTodoItemsInput {
+  """Array of records to create"""
+  todoItems: [CreateTodoItem!]!
+}
+
+input CreateOneTodoItemInput {
+  """The record to create"""
+  todoItem: CreateTodoItem!
+}
+
+input CreateTodoItem {
+  completed: Boolean
+  created: DateTime
+  id: ID
+  title: String
+  updated: DateTime
+}
+
+input CursorPaging {
+  """Paginate after opaque cursor"""
+  after: ConnectionCursor
+
+  """Paginate before opaque cursor"""
+  before: ConnectionCursor
+
+  """Paginate first"""
+  first: Int
+
+  """Paginate last"""
+  last: Int
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type DeleteManyResponse {
+  """The number of records deleted."""
+  deletedCount: Int!
+}
+
+input DeleteManyTodoItemsInput {
+  """Filter to find records to delete"""
+  filter: TodoItemDeleteFilter!
+}
+
+input DeleteOneTodoItemInput {
+  """The id of the record to delete."""
+  id: ID!
+}
+
+input IDFilterComparison {
+  eq: ID
+  gt: ID
+  gte: ID
+  iLike: ID
+  in: [ID!]
+  is: Boolean
+  isNot: Boolean
+  like: ID
+  lt: ID
+  lte: ID
+  neq: ID
+  notILike: ID
+  notIn: [ID!]
+  notLike: ID
+}
+
+type Mutation {
+  createManyTodoItems(input: CreateManyTodoItemsInput!): [TodoItem!]!
+  createOneTodoItem(input: CreateOneTodoItemInput!): TodoItem!
+  deleteManyTodoItems(input: DeleteManyTodoItemsInput!): DeleteManyResponse!
+  deleteOneTodoItem(input: DeleteOneTodoItemInput!): TodoItemDeleteResponse!
+  updateManyTodoItems(input: UpdateManyTodoItemsInput!): UpdateManyResponse!
+  updateOneTodoItem(input: UpdateOneTodoItemInput!): TodoItem!
+}
+
+type PageInfo {
+  """The cursor of the last returned record."""
+  endCursor: ConnectionCursor
+
+  """true if paging forward and there are more records."""
+  hasNextPage: Boolean
+
+  """true if paging backwards and there are more records."""
+  hasPreviousPage: Boolean
+
+  """The cursor of the first returned record."""
+  startCursor: ConnectionCursor
+}
+
+type Query {
+  todoItem(
+    """The id of the record to find."""
+    id: ID!
+  ): TodoItem
+  todoItems(
+    """Specify to filter the records returned."""
+    filter: TodoItemFilter = {}
+
+    """Limit or page results."""
+    paging: CursorPaging = {first: 10}
+
+    """Specify to sort results."""
+    sorting: [TodoItemSort!] = []
+  ): TodoItemConnection!
+}
+
+"""Sort Directions"""
+enum SortDirection {
+  ASC
+  DESC
+}
+
+"""Sort Nulls Options"""
+enum SortNulls {
+  NULLS_FIRST
+  NULLS_LAST
+}
+
+input StringFieldComparison {
+  eq: String
+  gt: String
+  gte: String
+  iLike: String
+  in: [String!]
+  is: Boolean
+  isNot: Boolean
+  like: String
+  lt: String
+  lte: String
+  neq: String
+  notILike: String
+  notIn: [String!]
+  notLike: String
+}
+
+type TodoItem {
+  completed: Boolean!
+  created: DateTime!
+  id: ID!
+  title: String!
+  updated: DateTime!
+}
+
+type TodoItemAggregateGroupBy {
+  completed: Boolean
+  id: ID
+  title: String
+}
+
+type TodoItemAvgAggregate {
+  id: Float
+}
+
+type TodoItemConnection {
+  """Array of edges."""
+  edges: [TodoItemEdge!]!
+
+  """Paging information"""
+  pageInfo: PageInfo!
+}
+
+type TodoItemCountAggregate {
+  completed: Int
+  id: Int
+  title: Int
+}
+
+input TodoItemDeleteFilter {
+  and: [TodoItemDeleteFilter!]
+  completed: BooleanFieldComparison
+  id: IDFilterComparison
+  or: [TodoItemDeleteFilter!]
+  title: StringFieldComparison
+}
+
+type TodoItemDeleteResponse {
+  completed: Boolean
+  created: DateTime
+  id: ID
+  title: String
+  updated: DateTime
+}
+
+type TodoItemEdge {
+  """Cursor for this node."""
+  cursor: ConnectionCursor!
+
+  """The node containing the TodoItem"""
+  node: TodoItem!
+}
+
+input TodoItemFilter {
+  and: [TodoItemFilter!]
+  completed: BooleanFieldComparison
+  id: IDFilterComparison
+  or: [TodoItemFilter!]
+  title: StringFieldComparison
+}
+
+type TodoItemMaxAggregate {
+  id: ID
+  title: String
+}
+
+type TodoItemMinAggregate {
+  id: ID
+  title: String
+}
+
+input TodoItemSort {
+  direction: SortDirection!
+  field: TodoItemSortFields!
+  nulls: SortNulls
+}
+
+enum TodoItemSortFields {
+  completed
+  id
+  title
+}
+
+type TodoItemSumAggregate {
+  id: Float
+}
+
+input TodoItemUpdateFilter {
+  and: [TodoItemUpdateFilter!]
+  completed: BooleanFieldComparison
+  id: IDFilterComparison
+  or: [TodoItemUpdateFilter!]
+  title: StringFieldComparison
+}
+
+type UpdateManyResponse {
+  """The number of records updated."""
+  updatedCount: Int!
+}
+
+input UpdateManyTodoItemsInput {
+  """Filter used to find fields to update"""
+  filter: TodoItemUpdateFilter!
+
+  """The update to apply to all records found using the filter"""
+  update: UpdateTodoItem!
+}
+
+input UpdateOneTodoItemInput {
+  """The id of the record to update"""
+  id: ID!
+
+  """The update to apply."""
+  update: UpdateTodoItem!
+}
+
+input UpdateTodoItem {
+  completed: Boolean
+  created: DateTime
+  id: ID
+  title: String
+  updated: DateTime
+}

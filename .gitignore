@@ -43,3 +43,4 @@ Thumbs.db
 
 #nohup.out ignore
 nohup.out
+/.env
